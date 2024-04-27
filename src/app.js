@@ -1,7 +1,7 @@
 import express from "express";
-import { connectDB } from "./utils/features.js";
+import { connectDB } from "../utils/features.js";
 import dotenv from "dotenv";
-import { errorMiddleware } from "./middlewares/error.js";
+import { errorMiddleware } from "../middlewares/error.js";
 import cookieParser from "cookie-parser";
 import { Server } from "socket.io";
 import { createServer } from "http";
@@ -16,15 +16,15 @@ import {
   ONLINE_USERS,
   START_TYPING,
   STOP_TYPING,
-} from "./constants/events.js";
-import { getSockets } from "./lib/helper.js";
-import { Message } from "./models/message.js";
-import { corsOptions } from "./constants/config.js";
-import { socketAuthenticator } from "./middlewares/auth.js";
+} from "../constants/events.js";
+import { getSockets } from "../lib/helper.js";
+import { Message } from "../models/message.js";
+import { corsOptions } from "../constants/config.js";
+import { socketAuthenticator } from "../middlewares/auth.js";
 
-import userRoute from "./routes/user.js";
-import chatRoute from "./routes/chat.js";
-import adminRoute from "./routes/admin.js";
+import userRoute from "../routes/user.js";
+import chatRoute from "../routes/chat.js";
+import adminRoute from "../routes/admin.js";
 
 dotenv.config({
   path: "./.env",
